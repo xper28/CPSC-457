@@ -1,0 +1,125 @@
+/**********************************************
+ * Last Name:   <Hassan>
+ * First Name:  <Ahmad>
+ * Student ID:  <30055847>
+ * Course:      CPSC 457
+ * Tutorial:    <1>
+ * Assignment:  2
+ * Question:    Q4
+ *
+ * File name: report.txt
+ *********************************************/
+ 
+ Strace results:
+    
+    Bash script output:
+        
+        2432 ./scan.cpp
+        1361 ./sum.cpp
+        765 ./myFind.cpp
+        595 ./b/1.cpp
+        total bytes: 5153
+        % time     seconds  usecs/call     calls    errors syscall
+        ------ ----------- ----------- --------- --------- ----------------
+         75.71    0.002537         507         5         1 wait4
+          4.63    0.000155          38         4           clone
+          4.54    0.000152           2        68        47 openat
+          2.30    0.000077           2        33         6 close
+          2.30    0.000077           3        23           mmap
+          2.09    0.000070           4        17         7 stat
+          1.46    0.000049           2        19           rt_sigprocmask
+          1.43    0.000048           2        20           fstat
+          1.16    0.000039           2        16           rt_sigaction
+          1.07    0.000036           4         8           mprotect
+          0.54    0.000018           2         9           read
+          0.39    0.000013           4         3           pipe
+          0.30    0.000010          10         1           munmap
+          0.24    0.000008           2         4           lseek
+          0.21    0.000007           1         4           brk
+          0.21    0.000007           2         3         2 ioctl
+          0.21    0.000007           2         3         1 fcntl
+          0.15    0.000005           2         2           getpid
+          0.15    0.000005           2         2           prlimit64
+          0.12    0.000004           4         1           dup2
+          0.12    0.000004           4         1           sysinfo
+          0.09    0.000003           3         1           getuid
+          0.09    0.000003           3         1           getgid
+          0.09    0.000003           3         1           geteuid
+          0.09    0.000003           3         1           getegid
+          0.09    0.000003           3         1           getppid
+          0.06    0.000002           2         1           rt_sigreturn
+          0.06    0.000002           2         1           uname
+          0.06    0.000002           2         1           getpgrp
+          0.06    0.000002           2         1           arch_prctl
+          0.00    0.000000           0         1         1 access
+          0.00    0.000000           0         1           execve
+        ------ ----------- ----------- --------- --------- ----------------
+        100.00    0.003351                   257        65 total
+
+        
+    C++ program output:
+        
+        ahmad.hassan1@zone51-eb:~/CPSC457/A2$ strace -c ./scan .cpp 4
+        Found 5 files:
+        2432 ./scan.cpp 
+        1361 ./sum.cpp 
+        765 ./myFind.cpp 
+        258 ./myFind2.cpp 
+        Total size: 4816 bytes.
+        % time     seconds  usecs/call     calls    errors syscall
+        ------ ----------- ----------- --------- --------- ----------------
+         69.71    0.002230        2230         1           wait4
+         11.16    0.000357           7        48        43 openat
+          4.41    0.000141          10        14           mmap
+          3.41    0.000109          10        10           mprotect
+          2.50    0.000080           6        13         7 stat
+          2.00    0.000064          10         6           read
+          1.63    0.000052          52         1           clone
+          1.50    0.000048           6         7           close
+          1.09    0.000035           5         7           fstat
+          0.81    0.000026           4         6           write
+          0.50    0.000016          16         1         1 access
+          0.44    0.000014          14         1           munmap
+          0.31    0.000010           3         3           brk
+          0.22    0.000007           7         1           pipe2
+          0.19    0.000006           6         1           arch_prctl
+          0.13    0.000004           4         1           fcntl
+          0.00    0.000000           0         1           execve
+        ------ ----------- ----------- --------- --------- ----------------
+        100.00    0.003199                   122        51 total
+        
+    
+    
+    
+Time results:
+    
+    Bash script output:
+        
+        2432 ./scan.cpp
+        1361 ./sum.cpp
+        765 ./myFind.cpp
+        595 ./b/1.cpp
+        total bytes: 5153
+
+        real	0m0.012s
+        user	0m0.006s
+        sys	0m0.014s
+        
+    C++ program output:
+        
+        Found 5 files:
+        2432 ./scan.cpp 
+        1361 ./sum.cpp 
+        765 ./myFind.cpp 
+        258 ./myFind2.cpp 
+        Total size: 4816 bytes.
+
+        real	0m0.013s
+        user	0m0.007s
+        sys	0m0.004s
+
+
+        
+Conclusion: the C++ program ran faster because it made fewer system calls (257 vs 122)
+
+
