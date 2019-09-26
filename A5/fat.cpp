@@ -1,10 +1,8 @@
 // CPSC457 University of Calgary
 // Skeleton C++ program for Q7 of Assignment 5.
 //
-// The program reads in the input, then calls the (wrongly implemented) checkConsistency()
+// The program reads in the input, then calls checkConsistency()
 // function, and finally formats the output.
-//
-// You only need to reimplement the checkConsistency() function.
 //
 // Author: Pavol Federl (pfederl@ucalgary.ca or federl@gmail.com)
 // Date: April 1, 2019
